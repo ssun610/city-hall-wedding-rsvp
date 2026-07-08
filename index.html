@@ -104,7 +104,7 @@
     #hero .hero-bg img {
       width: 100%; height: 100%;
       object-fit: cover;
-      object-position: center;
+      object-position: top center;
       display: block;
     }
     #hero .hero-bg::after {
@@ -113,13 +113,17 @@
       inset: 0;
       background: linear-gradient(
         to bottom,
-        rgba(253, 248, 243, 0.55) 0%,
-        rgba(253, 248, 243, 0.70) 50%,
+        rgba(253, 248, 243, 0.45) 0%,
+        rgba(253, 248, 243, 0.62) 50%,
         rgba(253, 248, 243, 0.88) 100%
       );
     }
 
-    .hero-inner { position: relative; z-index: 1; max-width: 700px; }
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+    }
 
     .photo-swap-note {
       position: absolute;
@@ -344,13 +348,14 @@
 
     .carousel-outer {
       position: relative;
-      max-width: 720px;
+      max-width: 480px;
       margin: 2.5rem auto 0;
     }
     .carousel-track-wrap {
       overflow: hidden;
       border-radius: 28px;
       box-shadow: 0 16px 50px rgba(0,0,0,0.13);
+      transition: height 0.65s cubic-bezier(0.77, 0, 0.175, 1);
     }
     .carousel-track {
       display: flex;
@@ -360,7 +365,6 @@
     .carousel-slide {
       flex: 0 0 100%;
       position: relative;
-      aspect-ratio: 4/3;
       cursor: pointer;
     }
     .carousel-slide img {
@@ -520,10 +524,10 @@
 
   <!-- HERO -->
   <section id="hero">
+
     <div class="hero-bg">
-      <img src="https://picsum.photos/seed/couple-wedding/1400/900" alt="Eason & Sandy" />
+      <img src="Photo/hero.JPG" alt="Eason & Sandy" />
     </div>
-    <div class="photo-swap-note">📸 <span class="en">Placeholder — swap with your July photo!</span><span class="zh">佔位圖片——七月後換上你們的照片！</span></div>
 
     <div class="hero-inner">
       <div class="hero-badge">
@@ -551,14 +555,8 @@
         <span class="zh">我要參加！→</span>
       </a>
     </div>
-  </section>
 
-  <!-- WAVE -->
-  <div class="wave-divider">
-    <svg viewBox="0 0 1200 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0,30 C200,60 400,0 600,30 C800,60 1000,0 1200,30 L1200,60 L0,60 Z" fill="#fdf8f3"/>
-    </svg>
-  </div>
+  </section>
 
   <!-- DETAILS -->
   <div class="content-section bg-sage" id="details">
@@ -719,45 +717,90 @@
       <div class="carousel-track-wrap">
         <div class="carousel-track" id="carouselTrack">
 
-          <div class="carousel-slide" onclick="openLightbox(this)">
-            <img src="https://picsum.photos/seed/picnic-couple/900/675" alt="Us together" />
+          <!-- Portrait: 1108×1477 → ratio 1.333 -->
+          <div class="carousel-slide" data-ratio="1.333" onclick="openLightbox(this)">
+            <img src="Photo/carousel_1_1.JPEG" alt="Eason & Sandy" />
             <div class="carousel-caption">
-              <span class="carousel-caption-note">
-                <span class="en">📸 Replace with your photo</span>
-                <span class="zh">📸 換上你們的照片</span>
-              </span>
-              <span class="carousel-counter" id="carouselCounter">1 / 4</span>
+              <span class="carousel-counter" id="carouselCounter">1 / 20</span>
             </div>
           </div>
 
-          <div class="carousel-slide" onclick="openLightbox(this)">
-            <img src="https://picsum.photos/seed/golden-hour/900/675" alt="Golden hour" />
-            <div class="carousel-caption">
-              <span class="carousel-caption-note">
-                <span class="en">📸 Replace with your photo</span>
-                <span class="zh">📸 換上你們的照片</span>
-              </span>
-            </div>
+          <div class="carousel-slide" data-ratio="1.333" onclick="openLightbox(this)">
+            <img src="Photo/carousel_1_2.JPEG" alt="Eason & Sandy" />
           </div>
 
-          <div class="carousel-slide" onclick="openLightbox(this)">
-            <img src="https://picsum.photos/seed/laughing-couple/900/675" alt="Laughing together" />
-            <div class="carousel-caption">
-              <span class="carousel-caption-note">
-                <span class="en">📸 Replace with your photo</span>
-                <span class="zh">📸 換上你們的照片</span>
-              </span>
-            </div>
+          <!-- Landscape 4:3: 3088×2316 → ratio 0.75 -->
+          <div class="carousel-slide" data-ratio="0.75" onclick="openLightbox(this)">
+            <img src="Photo/carousel_2_1.JPG" alt="Eason & Sandy" />
           </div>
 
-          <div class="carousel-slide" onclick="openLightbox(this)">
-            <img src="https://picsum.photos/seed/flowers-sunny/900/675" alt="A favourite moment" />
-            <div class="carousel-caption">
-              <span class="carousel-caption-note">
-                <span class="en">📸 Replace with your photo</span>
-                <span class="zh">📸 換上你們的照片</span>
-              </span>
-            </div>
+          <div class="carousel-slide" data-ratio="0.75" onclick="openLightbox(this)">
+            <img src="Photo/carousel_2_2.JPG" alt="Eason & Sandy" />
+          </div>
+
+          <div class="carousel-slide" data-ratio="0.75" onclick="openLightbox(this)">
+            <img src="Photo/carousel_2_3.JPG" alt="Eason & Sandy" />
+          </div>
+
+          <div class="carousel-slide" data-ratio="0.75" onclick="openLightbox(this)">
+            <img src="Photo/carousel_2_4.JPG" alt="Eason & Sandy" />
+          </div>
+
+          <div class="carousel-slide" data-ratio="0.75" onclick="openLightbox(this)">
+            <img src="Photo/carousel_2_5.JPG" alt="Eason & Sandy" />
+          </div>
+
+          <div class="carousel-slide" data-ratio="0.75" onclick="openLightbox(this)">
+            <img src="Photo/carousel_2_6.JPG" alt="Eason & Sandy" />
+          </div>
+
+          <div class="carousel-slide" data-ratio="0.75" onclick="openLightbox(this)">
+            <img src="Photo/carousel_2_7.JPG" alt="Eason & Sandy" />
+          </div>
+
+          <!-- Portrait 2:3: displayed as 2560×3840 (EXIF rotated) → ratio 1.5 -->
+          <div class="carousel-slide" data-ratio="1.5" onclick="openLightbox(this)">
+            <img src="Photo/carousel_3_1.JPG" alt="Eason & Sandy" />
+          </div>
+
+          <div class="carousel-slide" data-ratio="1.5" onclick="openLightbox(this)">
+            <img src="Photo/carousel_3_2.JPG" alt="Eason & Sandy" />
+          </div>
+
+          <div class="carousel-slide" data-ratio="1.5" onclick="openLightbox(this)">
+            <img src="Photo/carousel_3_3.JPG" alt="Eason & Sandy" />
+          </div>
+
+          <div class="carousel-slide" data-ratio="1.5" onclick="openLightbox(this)">
+            <img src="Photo/carousel_3_4.JPG" alt="Eason & Sandy" />
+          </div>
+
+          <div class="carousel-slide" data-ratio="1.5" onclick="openLightbox(this)">
+            <img src="Photo/carousel_3_5.JPG" alt="Eason & Sandy" />
+          </div>
+
+          <div class="carousel-slide" data-ratio="1.5" onclick="openLightbox(this)">
+            <img src="Photo/carousel_3_6.JPG" alt="Eason & Sandy" />
+          </div>
+
+          <div class="carousel-slide" data-ratio="1.5" onclick="openLightbox(this)">
+            <img src="Photo/carousel_3_7.JPG" alt="Eason & Sandy" />
+          </div>
+
+          <div class="carousel-slide" data-ratio="1.5" onclick="openLightbox(this)">
+            <img src="Photo/carousel_3_8.JPG" alt="Eason & Sandy" />
+          </div>
+
+          <div class="carousel-slide" data-ratio="1.5" onclick="openLightbox(this)">
+            <img src="Photo/carousel_3_9.JPG" alt="Eason & Sandy" />
+          </div>
+
+          <div class="carousel-slide" data-ratio="1.5" onclick="openLightbox(this)">
+            <img src="Photo/carousel_3_10.JPG" alt="Eason & Sandy" />
+          </div>
+
+          <div class="carousel-slide" data-ratio="1.5" onclick="openLightbox(this)">
+            <img src="Photo/carousel_3_11.JPG" alt="Eason & Sandy" />
           </div>
 
         </div>
@@ -768,7 +811,7 @@
     </div>
 
     <div class="carousel-dots" id="carouselDots"></div>
-    <div class="carousel-progress" style="max-width:720px; margin:1.25rem auto 0;">
+    <div class="carousel-progress" style="max-width:480px; margin:1.25rem auto 0;">
       <div class="carousel-progress-bar" id="progressBar"></div>
     </div>
     <p class="carousel-pause-hint">
@@ -831,23 +874,33 @@
 
     /* ─── CAROUSEL ──────────────────────────────── */
     (function () {
-      const INTERVAL = 4000;
-      const track    = document.getElementById('carouselTrack');
-      const dotsWrap = document.getElementById('carouselDots');
-      const bar      = document.getElementById('progressBar');
-      const counter  = document.getElementById('carouselCounter');
-      const slides   = track.querySelectorAll('.carousel-slide');
-      const total    = slides.length;
-      let current    = 0;
+      const INTERVAL  = 4000;
+      const track     = document.getElementById('carouselTrack');
+      const trackWrap = track.parentElement;
+      const dotsWrap  = document.getElementById('carouselDots');
+      const bar       = document.getElementById('progressBar');
+      const counter   = document.getElementById('carouselCounter');
+      const slides    = track.querySelectorAll('.carousel-slide');
+      const total     = slides.length;
+      let current     = 0;
       let timer, isPaused = false;
 
       slides.forEach((_, i) => {
         const d = document.createElement('button');
         d.className = 'carousel-dot' + (i === 0 ? ' active' : '');
         d.setAttribute('aria-label', 'Slide ' + (i + 1));
-        d.addEventListener('click', () => goTo(i));
+        d.addEventListener('click', () => { goTo(i); startProgress(); });
         dotsWrap.appendChild(d);
       });
+
+      /* Resize container height to match each slide's natural ratio */
+      function updateHeight(idx) {
+        const ratio = parseFloat(slides[idx].dataset.ratio) || 0.75;
+        const w = trackWrap.offsetWidth;
+        const h = Math.round(w * ratio) + 'px';
+        trackWrap.style.height = h;
+        slides.forEach(s => s.style.height = h);
+      }
 
       function updateDots() {
         dotsWrap.querySelectorAll('.carousel-dot').forEach((d, i) => {
@@ -860,6 +913,7 @@
       function goTo(idx) {
         current = (idx + total) % total;
         track.style.transform = 'translateX(-' + (current * 100) + '%)';
+        updateHeight(current);
         updateDots();
         updateCounter();
       }
@@ -870,13 +924,6 @@
           bar.style.transition = 'width ' + INTERVAL + 'ms linear';
           bar.style.width = '100%';
         }));
-      }
-      function startAuto() {
-        clearInterval(timer);
-        startProgress();
-        timer = setInterval(() => {
-          if (!isPaused) { goTo(current + 1); startProgress(); }
-        }, INTERVAL);
       }
 
       const outer = document.querySelector('.carousel-outer');
@@ -897,8 +944,21 @@
         if (Math.abs(dx) > 40) goTo(current + (dx < 0 ? 1 : -1));
       });
 
+      window.addEventListener('resize', () => updateHeight(current));
+
+      /* Set initial height without transition to avoid flicker on load */
+      trackWrap.style.transition = 'none';
       goTo(0);
-      startAuto();
+      requestAnimationFrame(() => {
+        trackWrap.style.transition = 'height 0.65s cubic-bezier(0.77, 0, 0.175, 1)';
+      });
+
+      clearInterval(timer);
+      startProgress();
+      timer = setInterval(() => {
+        if (!isPaused) { goTo(current + 1); startProgress(); }
+      }, INTERVAL);
+
       window.carouselMove = (dir) => { goTo(current + dir); startProgress(); };
     })();
   </script>
